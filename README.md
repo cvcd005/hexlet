@@ -1,3 +1,3 @@
 # hexlet
-hexlet course 
+hexlet course. 
 There are my solution of challenge from hexlet.io
