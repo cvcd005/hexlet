@@ -1,0 +1,53 @@
+/*
+formattedTime.js
+
+Реализуйте и экспортируйте по умолчанию функцию, которая принимает
+на вход количество минут (прошедших с начала суток) и возвращает строку, 
+являющуюся временем в формате чч:мм.
+
+Пример:
+formattedTime(5); // 00:05
+formattedTime(15); // 00:15
+formattedTime(60); // 01:00
+formattedTime(67); // 01:07
+formattedTime(175); // 02:55
+formattedTime(600); // 10:00
+formattedTime(754); // 12:34
+
+Подсказки
+    Используйте функцию Math.floor(number) для округления до нижней границы
+*/
+
+const formattedTime = (n) => {
+    let hour = 0;
+    let min = 0;
+        
+    if (n<60) {
+        return (`00:`+`${zero(n)}`);
+    }
+    else {
+       hour=Math.floor(n/60);
+       min=n%60;
+       return (`${zero(hour)}:${zero(min)}`);
+    }
+}
+
+//input zero if time <10;(Example "05:01");  
+const zero = (num) => {
+    let zero = 0;
+    if (num<10) {
+        return (`${zero}`+`${num}`);
+    }
+    else {
+        return (`${num}`);
+    }
+}
+
+export default formattedTime;
+
+
+
+
+
+
+
