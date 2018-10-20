@@ -1,0 +1,33 @@
+/*
+diff.js
+
+Напишите функцию diff, которая принимает два угла (integer), каждый от 0 до 360, 
+и возвращает наименьшую разницу между ними.
+
+Примеры:
+
+diff(0, 45) === 45;         // не 315, а 45, потому что 45 меньше
+diff(0, 180) === 180;
+diff(0, 190) === 170;       // не 190, а 170, потому что 170 меньше
+diff(120, 280) === 160;
+
+*/
+
+// BEGIN (write your solution here) (write your solution here)
+const diff =(a,b) => {
+    if (a<b) {
+      if ((b-a)>180) {
+        return 360-b+a;
+      }
+      return b-a;
+    }
+    else {
+      if ((a-b)>180) {
+        return 360-a+b;
+      }
+      return a-b;
+    }
+  } 
+    
+  // END
+  export default diff;
