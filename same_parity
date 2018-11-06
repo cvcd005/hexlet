@@ -1,0 +1,32 @@
+/*
+solution.js
+
+Реализуйте и экспортируйте функцию по умолчанию, которая принимает
+ на вход список и возвращает новый, состоящий из элементов, у которых 
+такая же четность, как и у первого элемента входного списка.
+
+sameParity(l(-1, 0, 1, -3, 10, -2)); // (-1, 1, -3)
+
+sameParity(l()); // ()
+*/
+
+// eslint-disable-next-line
+import { l, isEmpty, head, tail, filter, toString as listToString } from 'hexlet-pairs-data';
+
+// BEGIN (write your solution here)
+
+const main=(list)=> {
+  if (isEmpty(list)===true) {
+    return l();
+  }
+
+  let first=head(list);
+  
+  const fn =(el)=> {
+    return Math.abs(el%2)===Math.abs(first%2)?true:false;
+  }
+  
+  return filter(fn,list);
+}
+export default main;
+// END
